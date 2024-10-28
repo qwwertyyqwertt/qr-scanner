@@ -4,12 +4,11 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>QR Code Scanner</title>
-   <!-- Include the HTML5 QR Code library -->
+   <!-- Link to HTML5 QR Code library -->
    <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
 </head>
 <body>
    <h2>Scan QR Code to Access Pet Information</h2>
-   <!-- Scanner container -->
    <div id="qr-reader" style="width: 300px; margin-bottom: 20px;"></div>
    <p id="qr-result">Please allow camera access to scan the QR code.</p>
    <p id="permission-message" style="color: red; display: none;">
@@ -26,7 +25,6 @@
          console.warn(`QR Code scan failed: ${error}`);
       }
 
-      // Function to initialize the QR code scanner
       function startQrScanner() {
          if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             document.getElementById("permission-message").style.display = "block";
@@ -40,7 +38,6 @@
          }
       }
 
-      // Start the QR scanner on page load
       document.addEventListener("DOMContentLoaded", startQrScanner);
    </script>
 </body>
